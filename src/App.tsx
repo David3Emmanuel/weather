@@ -20,7 +20,7 @@ function App() {
   }
 
   return <div className='app'>
-    <h2>Weather Report</h2>
+    <h1>Weather Report</h1>
     <form onSubmit={handleSubmit}>
       <select value={country} onChange={e => setCountry(e.target.value as keyof typeof countriesMap)}>
         {countries.map((country, i) => <option key={i} value={country}>{country}</option>)}

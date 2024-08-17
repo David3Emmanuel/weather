@@ -8,9 +8,9 @@ export const fetchWeatherData = async (lat: number, lon: number) => {
     console.log(values);
 
     return {
-        "Temperature": values.temperatureAvg,
+        "Temperature": values.temperatureAvg + '°C',
         "Humidity": values.humidityAvg,
-        "Chance of Rain": values.precipitationProbabilityAvg,
+        "Chance of Rain": values.precipitationProbabilityAvg + '%',
         "Wind Speed": values.windSpeedAvg,
     } as Object
 }

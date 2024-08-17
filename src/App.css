@@ -1,8 +1,47 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  background-color: #eee;
   padding: 2rem;
-  text-align: center;
+}
+
+.app {
+  width: 50%;
+  min-width: 400px;
+
+  padding: 2rem;
+  margin: auto;
+  border-radius: 1rem;
+  gap: 1rem;
+
+  background-color: white;
+  box-shadow: 0 4px 4px 4px hsla(0deg, 0%, 50%, 50%);
+}
+
+.app,
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+form {
+  width: 100%;
+  margin: 1rem 0;
+  gap: 1rem;
+  flex-direction: row;
+}
+
+select {
+  width: 100%;
+  display: block;
+  padding: 0.5rem;
+  background-color: rgb(249, 249, 249);
+  border: border 1px solid hsla(208, 37%, 20%, 50%);
 }
 
 .logo {
@@ -11,9 +50,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +63,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

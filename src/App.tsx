@@ -1,35 +1,24 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import countriesMap from './api/countries.json'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const countries = Object.keys(countriesMap);
+  const [country, setCountry] = useState(countries[0]);
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  }
+
+  return <div className='app'>
+    <h1>Weather</h1>
+    <form onSubmit={handleSubmit}>
+      <select value={country} onChange={e => setCountry(e.target.value)}>
+        {countries.map((country, i) => <option key={i} value={country}>{country}</option> )}
+      </select>
+      <button type='submit'>Submit</button>
+    </form>
+  </div>
 }
 
 export default App

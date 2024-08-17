@@ -7,7 +7,7 @@ import ReportData from './components/ReportData';
 function App() {
   const countries = Object.keys(countriesMap);
   const [country, setCountry] = useState(countries[0] as keyof typeof countriesMap);
-  const [report, setReport] = useState<Object | null>(null);
+  const [report, setReport] = useState<object | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

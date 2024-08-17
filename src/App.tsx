@@ -11,12 +11,15 @@ function App() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     setReport(null);
     const { lat, long } = countriesMap[country];
-    const data = await fetchWeatherData(lat, long);
-    console.log(data);
-    setReport(data);
+    try {
+      const data = await fetchWeatherData(lat, long);
+      setReport(data);
+    } catch (e) {
+      setReport({ "Something went wrong.": '' })
+    }
   }
 
   return <div className='app'>

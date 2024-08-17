@@ -43,6 +43,7 @@ select {
   padding: 0.5rem;
   background-color: rgb(249, 249, 249);
   border: border 1px solid hsla(208, 37%, 20%, 50%);
+  color: black;
 }
 
 .logo {

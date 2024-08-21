@@ -3,6 +3,22 @@
     margin: auto;
 }
 
-.search > * {
+.search>* {
     width: 100%;
+}
+
+.search:hover ul,
+.search:focus-within ul {
+    opacity: 100%;
+    transition: opacity 0.1s;
+}
+
+.search ul {
+    opacity: 0%;
+    transition: opacity 0.1s;
+
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    background-color: white;
 }

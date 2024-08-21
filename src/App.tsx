@@ -1,7 +1,7 @@
 import Map from "./pages/Map";
 import './App.css';
 import { useState } from "react";
-import { Page } from "./util";
+import { Page } from "./types";
 
 export default function App() {
   const [currentPage, _setCurrentPage] = useState(Page.MAP);

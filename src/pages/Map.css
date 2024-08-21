@@ -9,3 +9,29 @@
     border: 1px solid #555;
     position: relative;
 }
+
+.map-tooltip {
+    height: 50px;
+    aspect-ratio: 14/20;
+    position: relative;
+    top: -50px;
+
+    background-image: url('/location.svg');
+    background-size: cover;
+    padding-top: 3px;
+}
+
+.map-tooltip img {
+    height: 32px;
+    display: block;
+    margin: auto;
+}
+
+.map-tooltip.hover {
+    height: 30px;
+    padding-top: 0;
+}
+
+.map-tooltip.hover img {
+    height: 24px;
+}

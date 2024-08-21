@@ -1,0 +1,11 @@
+.map-page {
+    position: relative;
+}
+
+.map-container {
+    width: 500px;
+    height: 500px;
+    background-color: #999;
+    border: 1px solid #555;
+    position: relative;
+}

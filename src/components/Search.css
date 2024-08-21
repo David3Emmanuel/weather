@@ -1,0 +1,8 @@
+.search {
+    width: 200px;
+    margin: auto;
+}
+
+.search > * {
+    width: 100%;
+}

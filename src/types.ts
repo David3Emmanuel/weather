@@ -8,3 +8,13 @@ export type Location = {
     lon: number,
     url: string,
 };
+export type Weather = {
+    temperature: number,
+    condition: string,
+    icon: string,
+    windSpeed: number,
+    windDirection: string,
+    pressure: number,
+    precipitation: number,
+    humidity: number,
+}

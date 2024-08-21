@@ -1,8 +1,7 @@
+import { WEATHERAPI_KEY } from "../../env";
 import { Location } from "../types";
 
 export default async function getSuggestions(query: string): Promise<Location[]> {
-    const WEATHERAPI_KEY = '2a0f16d5195d4da3b24172627242108';
-
     const trimmed = query.trim();
     if (!trimmed) return [];
 

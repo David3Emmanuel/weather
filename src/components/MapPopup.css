@@ -1,0 +1,88 @@
+.map-popup__container {
+    width: 175px;
+    height: 128px;
+    padding: 0;
+    position: relative;
+}
+
+.map-popup {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 128px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+
+.map-popup__title {
+    width: 100%;
+    height: 24px;
+    display: flex;
+    gap: 7.5px;
+    justify-content: center;
+}
+
+.map-popup__city {
+    color: #404040;
+    font-size: 16px;
+}
+
+.map-popup__country {
+    color: #808080;
+    font-size: 14px;
+}
+
+.map-popup__condition {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.map-popup__condition div {
+    height: fit-content;
+    margin: auto;
+}
+
+.map-popup__cta {
+    color: #808080;
+    font-size: 14px;
+    text-decoration: underline;
+    text-align: center;
+    opacity: 1;
+}
+
+.mapboxgl-popup-content {
+    padding: 0;
+    border-radius: 10px;
+}
+
+.map-popup__overlay {
+    opacity: 0;
+
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0, 0%, 0%, 0.5);
+    backdrop-filter: blur(4px);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transition: all 0.5s;
+}
+
+.map-popup__overlay:hover {
+    opacity: 1;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.map-popup__overlay .map-popup__cta {
+    color: white;
+}

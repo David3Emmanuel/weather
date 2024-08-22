@@ -1,7 +1,6 @@
 .search {
-    width: 50%;
-    min-width: 360px;
-    max-width: 720px;
+    width: 100%;
+    max-width: 360px;
     margin: auto;
     font-size: 16px;
     border-radius: 28px;
@@ -9,6 +8,12 @@
     
     backdrop-filter: blur(8px);
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08);
+
+    height: 56px;
+}
+
+.search:hover {
+    height: auto;
 }
 
 .search * {
@@ -29,13 +34,13 @@
     background-color: rgba(255, 255, 255, 0.9);
 
     border-radius: 28px;
-    transition: all 0.3s;
+    transition: all 1s;
 }
 
 .search:hover .search__header,
 .search:focus-within .search__header {
     border-radius: 28px 28px 0 0;
-    transition: all 0.3s;
+    transition: all 1s;
 }
 
 .search__icon {
@@ -65,10 +70,24 @@
     padding: 16px;
     font-size: 14px;
     color: #49454F;
+
+    transform-origin: top;
+    opacity: 0;
+    transform: scaleY(0);
+    height: 0;
+    transition: all 1s;
+}
+
+.search:hover .message,
+.search:focus-within .message {
+    opacity: 1;
+    transform: scaleY(1);
+    height: auto;
+    transition: all 1s;
 }
 
 .search .error {
-    color: hsl(359, 100%, 50%);
+    color: hsl(0, 94%, 61%);
 }
 
 .search ul {
@@ -79,10 +98,10 @@
     background-color: rgba(255, 255, 255, 0.9);
 
     transform-origin: top;
+    opacity: 0;
     transform: scaleY(0);
     height: 0;
-    opacity: 0;
-    transition: all 0.3s;
+    transition: all 1s;
 
     cursor: pointer;
 }
@@ -92,7 +111,7 @@
     opacity: 1;
     transform: scaleY(1);
     height: auto;
-    transition: all 0.3s;
+    transition: all 1s;
 }
 
 .search ul li {

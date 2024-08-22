@@ -49,7 +49,7 @@ export default function Search({ submit }: {
             />
             {query && <span className="search__clear material-symbols-outlined" onClick={clearQuery}>close</span>}
         </div>
-        {suggestions.length > 0 && <div className="divider"></div>}
+        {(state !== State.DONE || suggestions.length > 0) && <div className="divider"></div>}
         {state === State.LOADING && <div className="loading message">Loading...</div>}
         {state === State.ERROR && <div className="error message">Something went wrong. <a>Try again</a></div>}
         {state === State.DONE && suggestions.length > 0 && <ul>

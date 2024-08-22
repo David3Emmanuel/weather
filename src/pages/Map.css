@@ -8,6 +8,7 @@
     background-color: #999;
     border: 1px solid #555;
     position: relative;
+    border-radius: 16px;
 }
 
 .map-tooltip {

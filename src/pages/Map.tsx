@@ -9,6 +9,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { MAPBOX_KEY } from '../../env';
 import getCurrentWeather from "../api/getCurrentWeather";
 import MapPopup from "../components/MapPopup";
+import { useAppContext } from "../appContext";
 mapboxgl.accessToken = MAPBOX_KEY;
 
 export default function Map({ active }: { active: boolean }) {
@@ -18,8 +19,12 @@ export default function Map({ active }: { active: boolean }) {
     const [lng, setLng] = useState(3.3792);
     const [lat, setLat] = useState(6.5244);
 
-    const [searchLocation, setSearchLocation] = useState<Location | null>(null);
-    const [searchWeather, setSearchWeather] = useState<Weather | null>(null);
+    const {
+        location: searchLocation,
+        weather: searchWeather,
+        setLocation: setSearchLocation,
+        setWeather: setSearchWeather
+    } = useAppContext();
 
     useEffect(() => {
         if (mapRef.current) return;

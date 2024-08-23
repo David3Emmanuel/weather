@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Location, Page, Theme, Weather } from "./types";
 import { AppProvider } from "./appContext";
 import Details from "./pages/Details";
-import Tabs from "./components/Tabs";
+import Tabs, { Tab } from "./components/Tabs";
 import Settings from "./pages/Settings";
 import ThemeButtons from "./components/ThemeButtons";
 
@@ -36,18 +36,19 @@ export default function App() {
       <header className={theme === Theme.DARK ? 'dark' : 'light'}>
         <h1>Clima</h1>
         <img src="/logo.svg" alt="logo" />
+        <Tab icon="settings" page={Page.SETTINGS} inactive />
         {currentPage !== Page.SETTINGS && <ThemeButtons />}
       </header>
       <div className={`app ${theme === Theme.DARK ? 'dark' : 'light'}`}>
         <Tabs />
-        <div style={{ flex: 1, position: 'relative' }}>
+        <div style={{ flex: 1, position: 'relative', display: "flex" }}>
           <div className={`page-container map-page-container ${prevPage === Page.MAP ? 'prev' : ''} ${currentPage === Page.MAP ? 'current' : ''}`}>
             <Map active={currentPage === Page.MAP} />
           </div>
-          <div className={`page-container ${prevPage === Page.DETAILS ? 'prev' : ''} ${currentPage === Page.DETAILS ? 'current' : ''}`}>
+          <div className={`page-container details-page-container ${prevPage === Page.DETAILS ? 'prev' : ''} ${currentPage === Page.DETAILS ? 'current' : ''}`}>
             <Details active={currentPage === Page.DETAILS} />
           </div>
-          <div className={`page-container ${prevPage === Page.SETTINGS ? 'prev' : ''} ${currentPage === Page.SETTINGS ? 'current' : ''}`}>
+          <div className={`page-container settings-page-container ${prevPage === Page.SETTINGS ? 'prev' : ''} ${currentPage === Page.SETTINGS ? 'current' : ''}`}>
             <Settings active={currentPage === Page.SETTINGS} />
           </div>
         </div>

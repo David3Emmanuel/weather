@@ -1,6 +1,7 @@
 .map-page {
     color: #1D1B20;
     position: relative;
+    height: 100%;
 }
 
 .map-container {
@@ -9,8 +10,8 @@
     position: relative;
     border-radius: 16px;
     margin: 10px;
+    height: calc(100vh - 12.5rem);
     margin-top: 1rem;
-    height: 500px;
 }
 
 .app.light .map-container {
@@ -27,6 +28,7 @@
 @media screen and (min-width:600px) {
     .map-container {
         width: 500px;
+        height: 500px;
         margin: auto;
         margin-left: 0;
         border-radius: 0 16px 16px 16px;
@@ -34,5 +36,16 @@
 
     .search-container {
         width: 500px;
+    }
+}
+
+@media screen and (min-width:1000px) {
+    .search-container {
+        width: 100%;
+    }
+
+    .map-container {
+        border-radius: 16px;
+        margin: auto;
     }
 }

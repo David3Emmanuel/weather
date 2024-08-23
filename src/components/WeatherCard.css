@@ -40,3 +40,15 @@
     display: inline-block;
     vertical-align: bottom;
 }
+
+@media screen and (min-width: 1000px) {
+    .weather-card {
+        width: 160px;
+        height: 120px;
+        font-size: 18px;
+    }
+
+    .weather-card__title {
+        font-size: 14px;
+    }
+}

@@ -23,6 +23,7 @@ export default function Details({ active }: { active: boolean }) {
     return <main className={`details-page ${active ? 'active' : ''}`}>
         {location && <>
             <PageHeader title={`Current Weather in ${location?.name}`} />
+            <h2>Current Weather in {location?.name}</h2>
             {weather && <div className='details'>
                 <WeatherCard
                     title="Temperature"

@@ -65,3 +65,9 @@
         border-right: none;
     }
 }
+
+@media screen and (min-width:1000px) {
+    .tabs {
+        display: none;
+    }
+}

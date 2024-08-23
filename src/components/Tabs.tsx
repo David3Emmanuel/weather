@@ -10,19 +10,20 @@ export default function Tabs() {
     </aside>
 }
 
-function Tab({ icon, label, page, className }: {
+export function Tab({ icon, label, page, className, inactive }: {
     icon: string,
-    label: string,
+    label?: string,
     page: Page,
     className?: string,
+    inactive?: boolean,
 }) {
     const { currentPage, setCurrentPage } = useAppContext();
 
     return <div
-        className={`tab ${currentPage === page ? 'active' : ''} ${className || ''}`}
+        className={`tab ${(!inactive && currentPage === page) ? 'active' : ''} ${className || ''}`}
         onClick={() => setCurrentPage(page)}
     >
-        <span className="material-symbols-outlined">{icon}</span>
-        <p>{label}</p>
+        <span className="material-symbols-outlined" style={{fontSize: label?24:48}}>{icon}</span>
+        {label && <p>{label}</p>}
     </div>
 }

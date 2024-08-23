@@ -5,13 +5,11 @@ header {
   align-items: center;
   gap: 10px;
   color: var(--color-dark);
-  background-color: var(--background-dark);
 }
 
 .app.light,
 header.light {
   color: var(--color-light);
-  background-color: var(--background-light);
 }
 
 header h1 {
@@ -54,7 +52,6 @@ header .theme-buttons {
   display: flex;
   flex-direction: column;
   margin: auto;
-  background-color: var(--background-dark);
 }
 
 .page-container {

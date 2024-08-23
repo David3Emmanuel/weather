@@ -24,11 +24,10 @@ input {
 .root {
   width: 100vw;
   height: 100vh;
-  overflow: hidden auto;
 }
 
 #root {
-  padding-bottom: 1.5rem;
+  overflow: hidden auto;
 }
 
 #root:has(.root.dark) {

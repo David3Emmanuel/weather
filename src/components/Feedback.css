@@ -1,0 +1,42 @@
+section.feedback {
+    padding: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    font-family: inherit;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+form a {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 8px 16px;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: white;
+    color: black;
+}
+
+.app.light form a {
+    background-color: black;
+    color: white;
+}

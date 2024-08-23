@@ -1,3 +1,5 @@
+import About from '../components/About';
+import Feedback from '../components/Feedback';
 import PageHeader from '../components/PageHeader';
 import ThemeButtons from '../components/ThemeButtons';
 import './Settings.css';
@@ -11,5 +13,7 @@ export default function Settings({ active }: { active: boolean }) {
                 <ThemeButtons />
             </div>
         </div>
+        <About />
+        <Feedback />
     </main>
 }

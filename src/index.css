@@ -28,6 +28,7 @@ input {
 
 #root {
   overflow: hidden auto;
+  padding-bottom: 55px;
 }
 
 #root:has(.root.dark) {

@@ -1,51 +1,5 @@
-header {
-  display: flex;
-  padding: 1.5rem;
-  padding-bottom: 0;
-  align-items: center;
-  gap: 10px;
-  color: var(--color-dark);
-}
-
-.app.light,
-header.light {
+.app.light {
   color: var(--color-light);
-}
-
-header h1 {
-  width: fit-content;
-  height: fit-content;
-}
-
-header img {
-  height: 48px;
-  position: relative;
-  top: -10px;
-}
-
-header .tab {
-  display: none;
-  position: fixed;
-  top: 0rem;
-  right: 5rem;
-  z-index: 1;
-}
-
-header.light .tab {
-  color: hsl(240, 20%, 25%);
-  border: 1px solid hsla(240, 20%, 75%, 0);
-}
-
-header.light .tab:hover {
-  color: hsl(240, 20%, 0%);
-}
-
-header .theme-buttons {
-  position: fixed;
-  top: 1rem;
-  right: 5px;
-  scale: 0.75;
-  z-index: 1;
 }
 
 .app {
@@ -87,15 +41,6 @@ header .theme-buttons {
 }
 
 @media screen and (min-width: 600px) {
-  header {
-    padding-bottom: 1rem;
-    justify-content: center;
-  }
-
-  header .theme-buttons {
-    right: 1rem;
-  }
-
   .app {
     flex-direction: row;
   }
@@ -111,19 +56,6 @@ header .theme-buttons {
 }
 
 @media screen and (min-width: 1000px) {
-  header {
-    padding: 0;
-    height: 91px;
-  }
-
-  header .theme-buttons {
-    right: 10rem;
-  }
-
-  header .tab {
-    display: block;
-  }
-
   .app {
     max-width: none;
     padding: 0 1rem;

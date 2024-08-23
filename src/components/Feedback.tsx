@@ -18,7 +18,7 @@ export default function Feedback() {
             />
             <a
                 target='_blank'
-                href={`mailto:david3emmanuel@gmail.com?cc=ololade220@gmail.com&subject=Climax%20Feedback&body=${feedback}`}
+                href={`mailto:david3emmanuel@gmail.com?cc=ololade220@gmail.com&subject=Clima%20Feedback&body=${feedback}`}
             >
                 Submit
             </a>

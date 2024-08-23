@@ -1,6 +1,20 @@
+header {
+  display: flex;
+  padding: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
 header h1 {
-  text-align: center;
-  padding: 1rem;
+  width: fit-content;
+  height: fit-content;
+}
+
+header img {
+  height: 48px;
+  position: relative;
+  top: -10px;
 }
 
 .app {
@@ -39,8 +53,8 @@ header h1 {
 }
 
 @media screen and (min-width: 600px) {
-  header h1 {
-    padding: 1.5rem;
+  header {
+    padding-bottom: 0;
   }
 
   .app {

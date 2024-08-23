@@ -30,7 +30,8 @@ export default function App() {
   }}>
     <>
     <header>
-      <h1>Weather App</h1>
+      <h1>Clima</h1>
+      <img src="/logo.svg" alt="logo" />
     </header>
       <div className="app">
         <Tabs />

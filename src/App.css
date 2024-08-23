@@ -28,6 +28,7 @@ header .tab {
   position: fixed;
   top: 0rem;
   right: 5rem;
+  z-index: 1;
 }
 
 header.light .tab {
@@ -44,6 +45,7 @@ header .theme-buttons {
   top: 1rem;
   right: 5px;
   scale: 0.75;
+  z-index: 1;
 }
 
 .app {

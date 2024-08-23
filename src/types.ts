@@ -18,3 +18,4 @@ export type Weather = {
     precipitation: number,
     humidity: number,
 }
+export enum Theme { LIGHT, DARK };

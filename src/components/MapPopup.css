@@ -86,7 +86,7 @@
 }
 
 .map-popup__overlay .map-popup__cta {
-    color: hsl(240, 20%, 100%);
+    color: white;
     font-weight: 600;
     font-size: 16px;
 }

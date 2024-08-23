@@ -1,0 +1,21 @@
+.page-header {
+    display: flex;
+    padding-right: 48px;
+    align-items: center;
+}
+
+.page-header span {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.page-header h2 {
+    flex: 1;
+    text-align: center;
+    height: fit-content;
+    font-weight: 500;
+}

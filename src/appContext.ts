@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { Location, Page, Weather } from "./types";
+import { Location, Page, Theme, Weather } from "./types";
 
 export type AppContext = {
     currentPage: Page,
@@ -8,6 +8,8 @@ export type AppContext = {
     setLocation: (location: Location | null) => void,
     weather: Weather | null,
     setWeather: (weather: Weather | null) => void,
+    theme: Theme,
+    setTheme: (theme: Theme) => void,
 }
 
 const appContext = createContext<AppContext>({
@@ -17,6 +19,8 @@ const appContext = createContext<AppContext>({
     setLocation: () => {},
     weather: null,
     setWeather: () => {},
+    theme: Theme.DARK,
+    setTheme: () => {},
 });
 
 export const AppProvider = appContext.Provider;

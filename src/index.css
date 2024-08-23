@@ -3,19 +3,34 @@
   padding: 0;
   box-sizing: border-box;
   max-width: 100%;
+  transition: all 0.1s;
+}
+
+:root {
+  --background-dark: hsl(240, 20%, 10%);
+  --color-dark: white;
+
+  --background-light: white;
+  --color-light: hsl(240, 33%, 25%);
 }
 
 body, input {
   font-family: 'Poppins', sans-serif;
-  color: white;
   font-size: 16px;
 }
 
-#root {
+#root, .root {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-color: hsl(240, 20%, 10%);
+}
+
+.root.dark {
+  background-color: var(--background-dark);
+}
+
+.root.light {
+  background-color: var(--background-light);
 }
 
 .divider {

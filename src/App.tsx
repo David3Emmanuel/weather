@@ -1,15 +1,18 @@
 import Map from "./pages/Map";
 import './App.css';
 import { useState } from "react";
-import { Location, Page, Weather } from "./types";
+import { Location, Page, Theme, Weather } from "./types";
 import { AppProvider } from "./appContext";
 import Details from "./pages/Details";
 import Tabs from "./components/Tabs";
+import Settings from "./pages/Settings";
+import ThemeButtons from "./components/ThemeButtons";
 
 export default function App() {
   const [currentPage, _setCurrentPage] = useState(Page.MAP);
   const [location, setLocation] = useState<Location | null>(null);
   const [weather, setWeather] = useState<Weather | null>(null);
+  const [theme, setTheme] = useState<Theme>(Theme.DARK);
 
   const [prevPage, setPrevPage] = useState<Page | null>(null);
 
@@ -27,13 +30,15 @@ export default function App() {
     currentPage, setCurrentPage,
     location, setLocation,
     weather, setWeather,
+    theme, setTheme,
   }}>
-    <>
-    <header>
-      <h1>Clima</h1>
-      <img src="/logo.svg" alt="logo" />
-    </header>
-      <div className="app">
+    <div className={`root ${theme === Theme.DARK ? 'dark' : 'light'}`}>
+      <header className={theme === Theme.DARK ? 'dark' : 'light'}>
+        <h1>Clima</h1>
+        <img src="/logo.svg" alt="logo" />
+        {currentPage !== Page.SETTINGS && <ThemeButtons />}
+      </header>
+      <div className={`app ${theme === Theme.DARK ? 'dark' : 'light'}`}>
         <Tabs />
         <div style={{ flex: 1, position: 'relative' }}>
           <div className={`page-container map-page-container ${prevPage === Page.MAP ? 'prev' : ''} ${currentPage === Page.MAP ? 'current' : ''}`}>
@@ -42,8 +47,11 @@ export default function App() {
           <div className={`page-container ${prevPage === Page.DETAILS ? 'prev' : ''} ${currentPage === Page.DETAILS ? 'current' : ''}`}>
             <Details active={currentPage === Page.DETAILS} />
           </div>
+          <div className={`page-container ${prevPage === Page.SETTINGS ? 'prev' : ''} ${currentPage === Page.SETTINGS ? 'current' : ''}`}>
+            <Settings active={currentPage === Page.SETTINGS} />
+          </div>
         </div>
       </div>
-    </>
+    </div>
   </AppProvider>
 }

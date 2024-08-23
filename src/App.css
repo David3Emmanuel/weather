@@ -4,6 +4,14 @@ header {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  color: var(--color-dark);
+  background-color: var(--background-dark);
+}
+
+.app.light,
+header.light {
+  color: var(--color-light);
+  background-color: var(--background-light);
 }
 
 header h1 {
@@ -17,6 +25,13 @@ header img {
   top: -10px;
 }
 
+header .theme-buttons {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  scale: 0.75;
+}
+
 .app {
   width: 100%;
   max-width: 800px;
@@ -24,6 +39,7 @@ header img {
   display: flex;
   flex-direction: column;
   margin: auto;
+  background-color: var(--background-dark);
 }
 
 .page-container {
@@ -33,11 +49,15 @@ header img {
   width: 100%;
   top: 0;
   left: 0;
-  background-color: hsl(240, 20%, 10%);
+  color: var(--color-dark);
 
   transform: translateX(100vw);
   opacity: 0;
   transition: all 0.5s;
+}
+
+.app.light .page-container {
+  color: var(--color-light);
 }
 
 .page-container.current {

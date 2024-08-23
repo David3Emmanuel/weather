@@ -1,0 +1,12 @@
+.settings {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1rem;
+}
+
+.theme-settings {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}

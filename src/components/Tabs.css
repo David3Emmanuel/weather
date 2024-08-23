@@ -16,9 +16,18 @@
     transition: all 0.3s;
 }
 
+.app.light .tab {
+    color: hsl(240, 20%, 35%);
+    border: 1px solid hsla(240, 20%, 75%, 0);
+}
+
 .tab:hover {
     color: hsl(240, 20%, 100%);
     transition: all 0.3s;
+}
+
+.app.light .tab:hover {
+    color: hsl(240, 20%, 0%);
 }
 
 .tab.active {
@@ -26,6 +35,12 @@
     border: 1px solid hsla(240, 20%, 80%, 1);
     background-color: hsl(240deg 25% 15%);
     transition: all 0.3s;
+}
+
+.app.light .tab.active {
+    color: var(--color-light);
+    border: 1px solid hsla(240, 20%, 75%, 1);
+    background-color: hsl(240deg 25% 85%);
 }
 
 .map-tab {

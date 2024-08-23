@@ -4,9 +4,10 @@ import { useState } from "react";
 import { Location, Page, Theme, Weather } from "./types";
 import { AppProvider } from "./appContext";
 import Details from "./pages/Details";
-import Tabs, { Tab } from "./components/Tabs";
+import Tabs from "./components/Tabs";
 import Settings from "./pages/Settings";
-import ThemeButtons from "./components/ThemeButtons";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export default function App() {
   const [currentPage, _setCurrentPage] = useState(Page.MAP);
@@ -33,12 +34,7 @@ export default function App() {
     theme, setTheme,
   }}>
     <div className={`root ${theme === Theme.DARK ? 'dark' : 'light'}`}>
-      <header className={theme === Theme.DARK ? 'dark' : 'light'}>
-        <h1>Clima</h1>
-        <img src="/logo.svg" alt="logo" />
-        <Tab icon="settings" page={Page.SETTINGS} inactive />
-        {currentPage !== Page.SETTINGS && <ThemeButtons />}
-      </header>
+      <Header />
       <div className={`app ${theme === Theme.DARK ? 'dark' : 'light'}`}>
         <Tabs />
         <div style={{ flex: 1, position: 'relative', display: "flex" }}>
@@ -53,6 +49,7 @@ export default function App() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   </AppProvider>
 }

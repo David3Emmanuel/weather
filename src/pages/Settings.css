@@ -9,4 +9,11 @@
     display: flex;
     gap: 16px;
     align-items: center;
+    justify-content: end;
+}
+
+@media screen and (min-width: 600px) {
+    .theme-settings {
+        justify-content: start;
+    }
 }

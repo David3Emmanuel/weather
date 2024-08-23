@@ -1,8 +1,7 @@
-import { WEATHERAPI_KEY } from "../../env";
 import { Weather } from "../types";
 
 export default async function getCurrentWeather(id: number): Promise<Weather> {
-    const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${WEATHERAPI_KEY}&q=id:${id}&aqi=no`, {
+    const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${import.meta.env.VITE_WEATHERAPI_KEY}&q=id:${id}&aqi=no`, {
         headers: { 'Access-Control-Allow-Origin': '*', },
     });
     if (!response.ok) {

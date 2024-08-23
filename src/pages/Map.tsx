@@ -6,11 +6,10 @@ import mapboxgl, { Map as _Map } from 'mapbox-gl';
 import './Map.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-import { MAPBOX_KEY } from '../../env';
 import getCurrentWeather from "../api/getCurrentWeather";
 import MapPopup from "../components/MapPopup";
 import { useAppContext } from "../appContext";
-mapboxgl.accessToken = MAPBOX_KEY;
+mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_KEY;
 
 export default function Map({ active }: { active: boolean }) {
     const mapContainer = useRef(null);

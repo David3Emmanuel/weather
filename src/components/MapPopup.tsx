@@ -1,14 +1,12 @@
 import { useEffect, useRef } from "react";
-import { Location, Weather } from "../types";
 import { Map as _Map, Popup } from 'mapbox-gl';
 
 import './MapPopup.css';
+import { useAppContext } from "../appContext";
+import { Page } from "../types";
 
-export default function MapPopup({ location, weather, map }: {
-    location: Location | null,
-    weather: Weather | null,
-    map: _Map | null,
-}) {
+export default function MapPopup({ map }: {map: _Map | null}) {
+    const { location, weather, setCurrentPage } = useAppContext();
 
     const popupRef = useRef<HTMLDivElement | null>(null);
 
@@ -42,7 +40,7 @@ export default function MapPopup({ location, weather, map }: {
                 </div>
                 <div className="map-popup__cta">See more</div>
             </div>
-            <div className="map-popup__overlay">
+            <div className="map-popup__overlay" onClick={() => setCurrentPage(Page.DETAILS)}>
                 <div className="map-popup__cta">See more</div>
             </div>
         </div>

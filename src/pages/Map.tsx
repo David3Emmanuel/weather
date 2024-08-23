@@ -19,12 +19,7 @@ export default function Map({ active }: { active: boolean }) {
     const [lng, setLng] = useState(3.3792);
     const [lat, setLat] = useState(6.5244);
 
-    const {
-        location: searchLocation,
-        weather: searchWeather,
-        setLocation: setSearchLocation,
-        setWeather: setSearchWeather
-    } = useAppContext();
+    const { setLocation, setWeather } = useAppContext();
 
     useEffect(() => {
         if (mapRef.current) return;
@@ -41,26 +36,30 @@ export default function Map({ active }: { active: boolean }) {
             setLat(map.getCenter().lat);
         });
 
+        map.on('idle', function () {
+            map.resize()
+        })
+
         mapRef.current = map;
     });
 
     const handleSearch = (location: Location) => {
         if (mapRef.current) {
             mapRef.current.setCenter([location.lon, location.lat]);
-            setSearchLocation(location);
+            setLocation(location);
 
-            setSearchWeather(null);
+            setWeather(null);
             getCurrentWeather(location.id).then((weather: Weather) => {
-                setSearchWeather(weather);
+                setWeather(weather);
             })
         }
     }
 
-    return <div className={`map-page ${active ? 'active' : ''}`}>
-        <MapPopup map={mapRef.current || null} location={searchLocation} weather={searchWeather} />
+    return <main className={`map-page ${active ? 'active' : ''}`}>
+        <MapPopup map={mapRef.current || null} />
         <div className="search-container">
             <Search submit={handleSearch} />
         </div>
         <div className="map-container" ref={mapContainer}></div>
-    </div>
+    </main>
 }

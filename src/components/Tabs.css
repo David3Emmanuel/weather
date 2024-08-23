@@ -1,0 +1,52 @@
+.tabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.tab {
+    padding: 1rem 2rem;
+    cursor: pointer;
+    color: hsl(240, 20%, 65%);
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid hsla(240, 20%, 80%, 0);
+    transition: all 0.3s;
+}
+
+.tab:hover {
+    color: hsl(240, 20%, 100%);
+    transition: all 0.3s;
+}
+
+.tab.active {
+    color: hsl(240, 20%, 100%);
+    border: 1px solid hsla(240, 20%, 80%, 1);
+    background-color: hsl(240deg 25% 15%);
+    transition: all 0.3s;
+}
+
+.map-tab {
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+@media screen and (min-width: 600px) {
+    .tabs {
+        flex-direction: column;
+        justify-content: start;
+        padding-left: 10px;
+    }
+
+    .tab {
+        font-size: 1.5rem;
+        padding: 1rem 10px;
+    }
+
+    .map-tab.active {
+        border-radius: 10px 0 0 10px;
+        border-right: none;
+    }
+}

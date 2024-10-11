@@ -1,50 +1,67 @@
-# React + TypeScript + Vite
+# Clima
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Clima is a sleek and user-friendly web application designed to provide real-time weather information and forecasts for any city around the globe. The app integrates with both a weather API and a map API, offering a dynamic and interactive experience.
 
-Currently, two official plugins are available:
+Demo link: https://weather-hatchdev.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Real-time Weather Information**: Get up-to-date weather data for any location.
+- **Interactive Map**: Use the map to search for locations and view weather details.
+- **Theme Support**: Switch between light and dark themes.
+- **Feedback**: Users can send feedback directly from the app.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Technologies Used
 
-- Configure the top-level `parserOptions` property like this:
+- **React + Vite + TypeScript**
+- **Mapbox GL**
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Getting Started
+
+### Installation
+
+1. Clone the repository:
+
+   ```sh
+   git clone https://github.com/David3Emmanuel/weather.git
+   cd clima
+   ```
+
+2. Install dependencies:
+
+   ```sh
+   npm install
+   ```
+
+3. Create a `.env` file in the root directory and add your API keys:
+   ```env
+   REACT_APP_MAPBOX_API_KEY=your_mapbox_api_key
+   REACT_APP_WEATHER_API_KEY=your_weather_api_key
+   ```
+
+### Running the App
+
+To start the development server:
+
+```sh
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+To build the project for production:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```sh
+npm run build
 ```
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any changes.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Authors
+
+- [David3Emmanuel](https://github.com/David3Emmanuel)
+- [dchefcoder](https://github.com/dchefcoder)
